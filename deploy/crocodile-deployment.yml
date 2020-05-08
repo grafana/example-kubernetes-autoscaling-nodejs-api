@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crocodile-api
+  labels:
+    app: crocodile-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crocodile-api
+  template:
+    metadata:
+      labels:
+        app: crocodile-api
+    spec:
+      containers:
+        - name: crocodile
+          image: brandiqa/crocodile-api
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 4000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: crocodile-service
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "4000"
+    prometheus.io/path: "/metrics"
+spec:
+  type: LoadBalancer
+  selector:
+    app: crocodile-api
+  ports:
+    - port: 4000
+      targetPort: 4000
+      protocol: TCP
+      name: http

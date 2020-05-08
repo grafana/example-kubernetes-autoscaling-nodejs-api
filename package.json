@@ -1,0 +1,20 @@
+{
+  "name": "node-api-autoscaling-example",
+  "version": "1.0.0",
+  "description": "Node API Auto Scaling Example",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Michael Wanyoike",
+  "license": "MIT",
+  "dependencies": {
+    "@tailorbrands/node-exporter-prometheus": "^2.0.6",
+    "json-server": "^0.16.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
