@@ -1,7 +1,64 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    },
+    {
+      "name": "DS_INFLUXDB-K6",
+      "label": "InfluxDB-K6",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "influxdb",
+      "pluginName": "InfluxDB"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "bargauge",
+      "name": "Bar Gauge",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "gauge",
+      "name": "Gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "6.7.3"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "influxdb",
+      "name": "InfluxDB",
+      "version": "1.0.0"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    }
+  ],
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:155",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -15,23 +72,37 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 5,
-  "iteration": 1588839351893,
+  "id": null,
+  "iteration": 1589906489073,
   "links": [],
   "panels": [
+    {
+      "collapsed": false,
+      "datasource": "${DS_PROMETHEUS}",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 12,
+      "panels": [],
+      "title": "K6 InfluxDB Metrics",
+      "type": "row"
+    },
     {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB-K6",
+      "datasource": "${DS_INFLUXDB-K6}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 11,
         "x": 0,
-        "y": 0
+        "y": 1
       },
       "hiddenSeries": false,
       "id": 10,
@@ -148,14 +219,14 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB-K6",
+      "datasource": "${DS_INFLUXDB-K6}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 11,
         "x": 11,
-        "y": 0
+        "y": 1
       },
       "hiddenSeries": false,
       "id": 8,
@@ -165,7 +236,7 @@
         "avg": false,
         "current": true,
         "max": true,
-        "min": true,
+        "min": false,
         "show": true,
         "total": false,
         "values": true
@@ -245,6 +316,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:228",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -253,6 +325,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:229",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -268,16 +341,16 @@
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 7
+        "y": 8
       },
-      "id": 12,
+      "id": 14,
       "panels": [],
-      "title": "K6 InfluxDB Metrics",
+      "title": "Crocodile Prometheus Metrics",
       "type": "row"
     },
     {
@@ -285,14 +358,14 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 6,
         "w": 11,
         "x": 0,
-        "y": 8
+        "y": 9
       },
       "hiddenSeries": false,
       "id": 16,
@@ -365,6 +438,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:662",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -373,6 +447,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:663",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -387,12 +462,12 @@
       }
     },
     {
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 6,
         "w": 11,
         "x": 11,
-        "y": 8
+        "y": 9
       },
       "id": 29,
       "options": {
@@ -459,25 +534,11 @@
       "type": "bargauge"
     },
     {
-      "collapsed": false,
-      "datasource": null,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 14
-      },
-      "id": 14,
-      "panels": [],
-      "title": "Crocodile Prometheus Metrics",
-      "type": "row"
-    },
-    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -491,7 +552,7 @@
       "legend": {
         "alignAsTable": true,
         "avg": true,
-        "current": false,
+        "current": true,
         "hideEmpty": true,
         "hideZero": true,
         "max": true,
@@ -544,6 +605,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:410",
           "format": "short",
           "label": "Rate",
           "logBase": 1,
@@ -552,6 +614,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:411",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -570,7 +633,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -633,6 +696,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:147",
           "format": "ms",
           "label": null,
           "logBase": 1,
@@ -641,6 +705,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:148",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -659,7 +724,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+      "datasource": "${DS_PROMETHEUS}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -740,6 +805,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:89",
           "format": "bytes",
           "label": null,
           "logBase": 1,
@@ -748,6 +814,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:90",
           "decimals": null,
           "format": "short",
           "label": null,
@@ -764,7 +831,7 @@
     },
     {
       "collapsed": true,
-      "datasource": null,
+      "datasource": "${DS_PROMETHEUS}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -778,7 +845,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "InfluxDB-K6",
+          "datasource": "${DS_INFLUXDB-K6}",
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
@@ -908,7 +975,7 @@
           }
         },
         {
-          "datasource": null,
+          "datasource": "${DS_PROMETHEUS}",
           "gridPos": {
             "h": 7,
             "w": 4,
@@ -973,7 +1040,7 @@
       "type": "row"
     }
   ],
-  "refresh": "10s",
+  "refresh": " 5s",
   "schemaVersion": 22,
   "style": "dark",
   "tags": [],
@@ -981,12 +1048,8 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-          "selected": true,
-          "text": "default",
-          "value": "default"
-        },
-        "datasource": "Prometheus",
+        "current": {},
+        "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values(container_memory_usage_bytes{namespace=~\".+\",container!=\"POD\"},namespace)",
         "hide": 0,
         "includeAll": false,
@@ -1008,13 +1071,8 @@
       },
       {
         "allValue": null,
-        "current": {
-          "isNone": true,
-          "selected": true,
-          "text": "None",
-          "value": ""
-        },
-        "datasource": "Prometheus",
+        "current": {},
+        "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values(container_memory_usage_bytes{namespace=~\"$namespace\",container_name!=\"POD\"},container_name)",
         "hide": 0,
         "includeAll": false,
@@ -1022,16 +1080,9 @@
         "label": "Container",
         "multi": false,
         "name": "container",
-        "options": [
-          {
-            "isNone": true,
-            "selected": true,
-            "text": "None",
-            "value": ""
-          }
-        ],
+        "options": [],
         "query": "label_values(container_memory_usage_bytes{namespace=~\"$namespace\",container_name!=\"POD\"},container_name)",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 1,
@@ -1044,7 +1095,7 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
@@ -1068,5 +1119,5 @@
   "variables": {
     "list": []
   },
-  "version": 39
+  "version": 44
 }
