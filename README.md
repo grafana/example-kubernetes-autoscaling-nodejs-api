@@ -69,7 +69,7 @@ At this point, Keda isn't configured to do anything.
 Execute the following commands to download and run the project in your workspace:
 
 ```bash
-git clone git@github.com:k6io/node-api-autoscaling-example.git
+git clone git@github.com:k6io/example-kubernetes-autoscaling-nodejs-api.git
 cd test-node-api-k6
 npm i
 npm run dev

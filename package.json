@@ -1,5 +1,5 @@
 {
-  "name": "node-api-autoscaling-example",
+  "name": "example-kubernetes-autoscaling-nodejs-api",
   "version": "1.0.0",
   "description": "Node API Auto Scaling Example",
   "main": "index.js",
