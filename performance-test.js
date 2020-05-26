@@ -22,7 +22,7 @@ export let options = {
 // };
 
 export default function () {
-  let r = http.get(`http://${__ENV.HOSTNAME}/`);
+  let r = http.get(`${__ENV.ENDPOINT}`);
   check(r, {
     'status is 200': r => r.status === 200,
   });

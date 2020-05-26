@@ -118,7 +118,7 @@ In this step, will run load testing test and send metrics to `influxdb`. Navigat
 
 ```bash
 # replace ip address
-HOSTNAME=10.98.55.109:4000/crocodiles k6 run -o influxdb=http://localhost:8086/k6 performance-test.js
+ENDPOINT=http://10.98.55.109:4000/crocodiles k6 run -o influxdb=http://localhost:8086/k6 performance-test.js
 ```
 
 ### 7. Run Load Testing WITH AutoScaling

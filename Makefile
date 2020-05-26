@@ -26,10 +26,10 @@ test:
 	curl 10.98.55.109:4000/crocodiles
 
 local-run:
-	HOSTNAME=localhost:4000/crocodiles k6 run performance-test.js
+	ENDPOINT=http://localhost:4000/crocodiles k6 run performance-test.js
 
 local-influx-run:
-	HOSTNAME=localhost:4000/crocodiles k6 run -o influxdb=http://localhost:8086/k6 performance-test.js
+	ENDPOINT=http://localhost:4000/crocodiles k6 run -o influxdb=http://localhost:8086/k6 performance-test.js
 
 run:
-	HOSTNAME=10.98.55.109:4000/crocodiles k6 run -o influxdb=http://localhost:8086/k6 performance-test.js
+	ENDPOINT=http://10.98.55.109:4000/crocodiles k6 run -o influxdb=http://localhost:8086/k6 performance-test.js
